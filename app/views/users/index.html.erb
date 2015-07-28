@@ -1,0 +1,7 @@
+<% @users.each do |user| %>
+  <%= link_to(cl_image_tag(user.picture || "default.png", :width => 200, :height => 200,
+                                  :crop => :fill, :gravity => :face,
+                                  :radius => :max), username_show_path(user.username)) %>
+<% end %>
+<%= will_paginate @users %>
+

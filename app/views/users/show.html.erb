@@ -1,0 +1,11 @@
+<div id="preview">
+  <%= cl_image_tag(@user.picture || "default.png") %>
+</div>
+<div class="center"><%= @user.location %></div>
+<% if logged_in? && @user.id == current_user.id %>
+  <%= cl_image_upload_tag(:image_id,
+                          width:200, height: 200,
+                          crop: :fill, gravity: :face,
+                          radius: :max,
+                         ) %>
+<% end %>
