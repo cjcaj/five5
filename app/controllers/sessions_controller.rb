@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to username_show_path(user.username)
     else
+      @error = "Invalid username/password"
       render 'new'
     end
   end

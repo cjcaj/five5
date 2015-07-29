@@ -3,6 +3,12 @@
 <%= form_for(:session, url: login_path) do |f| %>
   <h1>Log in</h1>
 
+  <% if @error %>
+    <ul>
+      <li><%= @error %></li>
+    </ul>
+  <% end %>
+
   <%= f.label :username %>
   <%= f.text_field :username %>
 
